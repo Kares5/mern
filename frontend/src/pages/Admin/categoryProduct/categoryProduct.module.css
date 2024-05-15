@@ -1,0 +1,38 @@
+.titleProductCat {
+    text-align: center;
+    font-size: 3rem;
+}
+.productsCategoryContainer{
+    margin-left: 3rem;
+}
+.singelCategoryContainer{
+    margin: 1rem;
+}
+.imgCategory{
+    width: 20rem;
+    height: 20rem;
+}
+.imgCategory img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.bodyproductCat{
+    margin-left: 2rem;   
+}
+.bodyproductCat h3{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.bodyproductCat button{
+
+    padding: 0.7rem ;
+    background-color: #ffc115f8;
+    color: white;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: var( --box_shadow);
+}

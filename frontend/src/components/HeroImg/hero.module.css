@@ -1,0 +1,44 @@
+.container {
+    width: 98.5vw;
+    height: 75vh;
+    position: relative;
+}
+.container img {
+    width: 100%;
+    height: 100%;
+   object-fit:cover;
+}
+.layer{
+    background-color: rgba(0, 0, 0, 0.34);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 3;
+}
+.layer h1  {
+    color : white;
+    margin: 15rem 0 0 15rem ;
+    font-size: 3rem;
+}
+/* ffc115f8 */
+.layer p {
+    color: #ffc115f8;
+    letter-spacing: 0.6rem;
+    font-size: 2.5rem;
+    width: 32%;
+    font-weight: bold;
+    margin-left: 15rem;
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 5s steps(20) infinite ,
+        cursor .4s step-end infinite alternate ;
+}
+@keyframes cursor {
+    50% {border-color: transparent;}
+}
+@keyframes typing {
+    from {width: 0;}
+}
