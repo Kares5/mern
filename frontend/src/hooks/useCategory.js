@@ -6,7 +6,7 @@ export default function useCategory () {
     // get the category
     const getCategories = async () => {
         try {
-            const {data} = await axios.get('http://localhost:5000/api/category/get-category')
+            const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/category/get-category')
             setCategories(data.category)
         } catch (error) {
             console.log(error)

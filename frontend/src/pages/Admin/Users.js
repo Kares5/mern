@@ -12,7 +12,7 @@ const Users = () => {
     // get all users
     const getAllUsers =async () => {
         try {
-          const {data} = await axios.get('http://localhost:5000/api/auth/all-user') 
+            const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/auth/all-user')  
         //   users from back end
           setUsers(data.users) 
         } catch (error) {
@@ -25,7 +25,7 @@ const Users = () => {
     } , [])
     const deleteHandler =async (userId) => {
         try {
-            const {data} = await axios.delete(`http://localhost:5000/api/auth/${userId}`)
+            const {data} = await axios.delete(`https://react-test-0lkd.onrender.com/api/auth/${userId}`)
             if(data.success) {
                 toast.success(data.message)
                 window.location.reload()

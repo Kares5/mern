@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try {
-          const res = await axios.post('http://localhost:5000/api/auth/forgot-password' , { email , newPassword , answer})
+          const res = await axios.post('https://react-test-0lkd.onrender.com/api/auth/forgot-password' , { email , newPassword , answer})
           if (res && res.data.success) {
             toast.success(res.data && res.data.message)
             navigate('/login')

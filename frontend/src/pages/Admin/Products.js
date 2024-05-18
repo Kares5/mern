@@ -23,7 +23,7 @@ const Products = () => {
 
   const getCategories = async () => {
     try {
-        const {data} = await axios.get('http://localhost:5000/api/category/get-category')
+      const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/category/get-category')
         setCategories(data.category)
     } catch (error) {
         console.log(error)
@@ -43,7 +43,7 @@ const handleCreate = async (e) => {
     productData.append('photo' , photo)
     productData.append('category' , category)
     productData.append('shipping' , shipping)
-    const {data} = axios.post('http://localhost:5000/api/product/create-product', productData )
+    const {data} = axios.post('https://react-test-0lkd.onrender.com/api/product/create-product', productData )
     if(data?.success) {
       toast.error(data?.message)
     }else{
@@ -60,7 +60,7 @@ const handleCreate = async (e) => {
   // all products
   const getAllProducts = async () => {
     try {
-      const {data} = await axios.get('http://localhost:5000/api/product/get-product')
+      const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/product/get-product')
       setProducts(data.products)
       
     } catch (error) {
@@ -139,7 +139,7 @@ const handleCreate = async (e) => {
                     <td>{p.description}</td>
                     <td>{p.price}</td>
                     <td className={styles.imgProduct}>
-                      <img src={`http://localhost:5000/api/product/product-photo/${p._id}`} alt= {p.name}/>
+                    <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`} alt= {p.name}/>
                     </td>
                     <td>
                         <Link to={`/dashboard/admin/products/${p.slug}`}>

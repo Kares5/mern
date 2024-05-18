@@ -27,7 +27,7 @@ const ProfileUser = () => {
 const handleSubmit = async (e) => {
   e.preventDefault()
   try {
-    const {data} = await axios.put('http://localhost:5000/api/auth/profile' , {name , email , phone , address , password})
+    const {data} = await axios.put('https://react-test-0lkd.onrender.com/api/auth/profile' , {name , email , phone , address , password})
     if (data.error) {
       toast.error(data.error)
     }else {

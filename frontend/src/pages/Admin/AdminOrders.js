@@ -15,7 +15,7 @@ const AdminOrders = () => {
 
      const getOrders = async () => {
         try {
-            const {data} = await axios.get('http://localhost:5000/api/auth/all-orders')
+            const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/auth/all-orders')
             setOrders(data)
         } catch (error) {
             console.log(error);
@@ -28,7 +28,7 @@ const AdminOrders = () => {
 
      const handleChange = async (orderId , value)=>{
         try {
-            const {data} = await axios.put(`http://localhost:5000/api/auth/order-status/${orderId}` , {status : value} )
+            const {data} = await axios.put(`https://react-test-0lkd.onrender.com/api/auth/order-status/${orderId}` , {status : value} )
             toast.success('order status updated successfully')
             getOrders()
         } catch (error) {
@@ -84,7 +84,7 @@ const AdminOrders = () => {
                         <div className={styles.singelCategoryContainer}>
                         <h2>{ i + 1} </h2>
                         <div className={styles.imgCategory}>
-                            <img src={`http://localhost:5000/api/product/product-photo/${p._id}`} alt = {p.name}/> 
+                        <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`} alt = {p.name}/>
                         </div>
                         <div className={styles.bodyproductCat}>
                         <h3>Name : {p.name}</h3>

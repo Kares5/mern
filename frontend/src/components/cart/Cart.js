@@ -46,7 +46,7 @@ const Cart = () => {
   // ======== get payment gateway token
   const getToken = async () => {
     try {
-      const {data} = await axios.get(`http://localhost:5000/api/product/braintree/token`)
+      const {data} = await axios.get(`https://react-test-0lkd.onrender.com/api/product/braintree/token`)
       setClientToken(data?.clientToken)   
     } catch (error) {
       console.log(error);
@@ -60,7 +60,7 @@ const Cart = () => {
   const handlePayment = async() => {
     try {
       const {nonce} = await instance.requestPaymentMethod()
-      const {data} = await axios.post('http://localhost:5000/api/product/braintree/payment' , {
+      const {data} = await axios.post('https://react-test-0lkd.onrender.com/api/product/braintree/payment' , {
         nonce , cart
       })
       setLoading(false)
@@ -87,7 +87,7 @@ const Cart = () => {
             {cart.map ((p) => (
                 <div className={styles.Singleproduct}>
                 <div className={styles.imageProduct}>
-                    <img src={`http://localhost:5000/api/product/product-photo/${p._id}`}alt = {p.name}/>
+                <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`}alt = {p.name}/>
                     
                     <div className={styles.heartIcon }>
                       <i className='bi bi-heart-fill'></i>

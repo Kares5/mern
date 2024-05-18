@@ -19,7 +19,7 @@ const ProductDetails = () => {
   // get product
   const getProduct = async () => {
     try {
-      const {data} = await axios.get(`http://localhost:5000/api/product/get-product/${params.slug}`)
+      const {data} = await axios.get(`https://react-test-0lkd.onrender.com/api/product/get-product/${params.slug}`)
       setProduct(data.product)
       getSimilarProduct(data.product._id , data.product.category._id)
     } catch (error) {
@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
   const getSimilarProduct = async (pid , cid) => {
     try {
-      const {data} = await axios.get(`http://localhost:5000/api/product/related-product/${pid}/${cid}`);
+      const {data} = await axios.get(`https://react-test-0lkd.onrender.com/api/product/related-product/${pid}/${cid}`);
       setRelatedProduct(data.products)
       
     } catch (error) {
@@ -41,7 +41,7 @@ const ProductDetails = () => {
     <Layout>
         <div className={styles.Singleproduct} >
           <div className={styles.imageProduct}>
-              <img src={`http://localhost:5000/api/product/product-photo/${product._id}`}alt = {product.name}/>     
+          <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${product._id}`}alt = {product.name}/>     
           </div>
           <div className={styles.productBody}>
             <h2>Name : {product.name}</h2>
@@ -63,7 +63,7 @@ const ProductDetails = () => {
               {relatedProduct.map(p => (
                 <div className={styles.SingleRelated} key={p._id}>
                   <div className={styles.Relatedimage}>
-                    <img src={`http://localhost:5000/api/product/product-photo/${p._id}`} alt = {p.name}/>     
+                  <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`} alt = {p.name}/>      
                   </div>
 
                   <div className={styles.RelatedBody}>

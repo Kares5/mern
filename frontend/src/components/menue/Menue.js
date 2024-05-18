@@ -29,7 +29,7 @@ const Menue = () => {
   // get all cats
   const getCategories = async () => {
     try {
-        const {data} = await axios.get('http://localhost:5000/api/category/get-category')
+        const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/category/get-category')
         setCategories(data.category)
     } catch (error) {
         console.log(error)
@@ -44,7 +44,7 @@ useEffect( () => {
 const getAllProducts = async () => {
   try {
     setLoading(true)
-    const {data} = await axios.get(`http://localhost:5000/api/product/product-list/${page}`)
+    const {data} = await axios.get(`https://react-test-0lkd.onrender.com/api/product/product-list/${page}`)
     setLoading(false)
     setProducts(data.products)
     
@@ -56,7 +56,7 @@ const getAllProducts = async () => {
 // get total count
 const getTotal = async () => {
   try {
-    const {data} = await axios.get('http://localhost:5000/api/product/product-count')
+    const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/product/product-count')
     setTotal(data.total) 
   } catch (error) {
     console.log(error)
@@ -70,7 +70,7 @@ useEffect( () => {
 const loadMore = async () => {
   try {
     setLoading(true)
-    const{data} = await axios.get(`http://localhost:5000/api/product/product-list/${page}`)
+    const{data} = await axios.get(`https://react-test-0lkd.onrender.com/api/product/product-list/${page}`)
     setLoading(false)
     setProducts([...products , ...data?.products])
     
@@ -101,7 +101,7 @@ useEffect ( () => {
 
 const filteredProducts = async () => {
   try {
-    const {data} = await axios.post(`http://localhost:5000/api/product/product-filter` , {checked })
+    const {data} = await axios.post(`https://react-test-0lkd.onrender.com/api/product/product-filter` , {checked })
     setProducts(data?.products)
   } catch (error) {
     console.log(error);
@@ -140,7 +140,7 @@ const filteredProducts = async () => {
           {products.filter( (p) => p.name.toLowerCase().includes(search)).map( (p) => (
             <div className={styles.Singleproduct}>
               <div className={styles.imageProduct}>
-                  <img src={`http://localhost:5000/api/product/product-photo/${p._id}`}alt = {p.name}/>
+              <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`}alt = {p.name}/>
                   
                   <div className={styles.heartIcon }  onClick={() =>{
                     const isExist = favorite.find((x) => x._id === p._id)

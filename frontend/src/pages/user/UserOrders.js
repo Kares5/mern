@@ -14,7 +14,7 @@ const UserOrders = () => {
 
     const getOrders = async() => {
         try {
-            const {data} = await axios.get('http://localhost:5000/api/auth/orders')
+            const {data} = await axios.get('https://react-test-0lkd.onrender.com/api/auth/orders')
             setOrders(data)
         } catch (error) {
             console.log(error);
@@ -56,7 +56,7 @@ const UserOrders = () => {
                         <div className={styles.singelCategoryContainer}>
                         <h2>{ i + 1} </h2>
                         <div className={styles.imgCategory}>
-                            <img src={`http://localhost:5000/api/product/product-photo/${p._id}`} alt = {p.name}/> 
+                        <img src={`https://react-test-0lkd.onrender.com/api/product/product-photo/${p._id}`} alt = {p.name}/> 
                         </div>
                         <div className={styles.bodyproductCat}>
                         <h3>Name : {p.name}</h3>
